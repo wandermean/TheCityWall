@@ -1,8 +1,7 @@
 import React from 'react';
-import { View, Text } from 'react-native';
 import { TabBar } from 'antd-mobile-rn';
 
-export default class BasicTabBarExample extends React.Component<any, any> {
+export default class WallTabBar extends React.Component<any, any> {
   constructor(props: any) {
     super(props);
     this.state = {
@@ -21,7 +20,7 @@ export default class BasicTabBarExample extends React.Component<any, any> {
       <TabBar
         unselectedTintColor="#929292"
         tintColor="#984B4B"
-        barTintColor="#ccc"
+        barTintColor="#FFFFFF"
       >
         <TabBar.Item
           title="墙"
