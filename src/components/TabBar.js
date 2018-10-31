@@ -1,4 +1,5 @@
 import React from 'react';
+import { View, Text } from 'react-native';
 import { TabBar } from 'antd-mobile-rn';
 
 export default class WallTabBar extends React.Component<any, any> {
@@ -7,6 +8,14 @@ export default class WallTabBar extends React.Component<any, any> {
     this.state = {
       selectedTab: 'wallTab',
     };
+  }
+
+  renderContent(pageText: any) {
+    return (
+      <View style={{ flex: 1, alignItems: 'center', backgroundColor: 'white' }}>
+        <Text style={{ margin: 50 }}>{pageText}</Text>
+      </View>
+    );
   }
 
   onChangeTab(tabName: any) {
@@ -22,13 +31,14 @@ export default class WallTabBar extends React.Component<any, any> {
         tintColor="#984B4B"
         barTintColor="#FFFFFF"
       >
-        <TabBar.Item
+        <TabBar.Item iconStyle={{ height: 5}}
           title="墙"
           icon={require('../images/wall-unselect.png')}
           selectedIcon={require('../images/wall-select.png')}
           selected={this.state.selectedTab === 'wallTab'}
           onPress={() => this.onChangeTab('wallTab')}
         >
+          {this.renderContent('Life Tab')}
         </TabBar.Item>
         <TabBar.Item
           icon={require('../images/message-unselect.png')}
@@ -38,6 +48,7 @@ export default class WallTabBar extends React.Component<any, any> {
           selected={this.state.selectedTab === 'messageTab'}
           onPress={() => this.onChangeTab('messageTab')}
         >
+          {this.renderContent('Life Tab')}
         </TabBar.Item>
         <TabBar.Item
           icon={require('../images/found-unselect.png')}
@@ -46,6 +57,7 @@ export default class WallTabBar extends React.Component<any, any> {
           selected={this.state.selectedTab === 'foundTab'}
           onPress={() => this.onChangeTab('foundTab')}
         >
+          {this.renderContent('Life Tab')}
         </TabBar.Item>
         <TabBar.Item
           icon={require('../images/me-unselect.png')}
@@ -54,6 +66,7 @@ export default class WallTabBar extends React.Component<any, any> {
           selected={this.state.selectedTab === 'meTab'}
           onPress={() => this.onChangeTab('meTab')}
         >
+          {this.renderContent('Life Tab')}
         </TabBar.Item>
       </TabBar>
     );
